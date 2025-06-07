@@ -1,0 +1,27 @@
+import React from 'react';
+import type { Movie } from '../types';
+
+interface Props {
+  movie: Movie | null;
+  onClose: () => void;
+}
+
+const MovieModal: React.FC<Props> = ({ movie, onClose }) => {
+  if (!movie) return null;
+
+  return (
+    <div className="modal-backdrop" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <h2>{movie.Title} ({movie.Year})</h2>
+        <img src={movie.Poster} alt={movie.Title} />
+        <p><strong>Genre:</strong> {movie.Genre}</p>
+        <p><strong>Director:</strong> {movie.Director}</p>
+        <p><strong>Actors:</strong> {movie.Actors}</p>
+        <p><strong>Plot:</strong> {movie.Plot}</p>
+        <button onClick={onClose}>Close</button>
+      </div>
+    </div>
+  );
+};
+
+export default MovieModal;
