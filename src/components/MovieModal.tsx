@@ -34,9 +34,11 @@ const MovieModal: React.FC<Props> = ({ movie, onClose }) => {
         <p>
           <strong>Actors:</strong> {movie.Actors}
         </p>
-        <p>
-          <strong>Plot:</strong> {movie.Plot}
-        </p>
+        <div className="modal-plot">
+          <p>
+            <strong>Plot:</strong> {movie.Plot}
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -277,6 +277,7 @@ body.dark {
   transform: translateY(-5px);
 }
 
+
 .movie-card img {
   width: 100%;
   height: 300px;
@@ -341,6 +342,9 @@ body.dark {
   max-width: 100%;
   height: auto;
   margin-bottom: 15px;
+}
+.modal-plot p {
+  text-align: justify;
 }
 
 .modal-close {
@@ -456,5 +460,6 @@ body.dark {
 
   .movie-info p {
     font-size: 0.9rem;
+    
   }
 }
