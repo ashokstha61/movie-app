@@ -1,48 +1,6 @@
-// import React from 'react';
-// import SearchBar from './SearchBar';
-
-// interface Props {
-//   searchQuery: string;
-//   setSearchQuery: (query: string) => void;
-//   onSearch: () => void;
-//   darkMode: boolean;
-//   toggleDarkMode: () => void;
-//   showFavoritesOnly: boolean;
-//   toggleView: () => void;
-// }
-
-// const Navbar: React.FC<Props> = ({
-//   searchQuery,
-//   setSearchQuery,
-//   onSearch,
-//   darkMode,
-//   toggleDarkMode,
-//   showFavoritesOnly,
-//   toggleView,
-// }) => {
-//   return (
-//     <nav className="navbar">
-//       <h1 className="logo">🎬 Movie Explorer</h1>
-//       <SearchBar
-//         searchQuery={searchQuery}
-//         setSearchQuery={setSearchQuery}
-//         onSearch={onSearch}
-//       />
-//       <div className="navbar-controls">
-//         <button onClick={toggleView} className="toggle-btn">
-//           {showFavoritesOnly ? 'Search Results' : 'Favorites Only'}
-//         </button>
-//         <button onClick={toggleDarkMode} className="theme-toggle">
-//           {darkMode ? '🌞' : '🌙'}
-//         </button>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import SearchBar from './SearchBar';
 
 interface Props {
@@ -97,9 +55,12 @@ const Navbar: React.FC<Props> = ({
               <span className="icon">★</span>
               {showFavoritesOnly ? 'Search Results' : 'Favorites Only'}
             </button>
-            <button onClick={toggleDarkMode} className="theme-toggle">
-              <span className="icon">{darkMode ? '🌞' : '🌙'}</span>
-              {darkMode ? 'Light Mode' : 'Dark Mode'}
+            <button onClick={toggleDarkMode} className="theme-toggle" aria-label={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}>
+              <FontAwesomeIcon
+                icon={darkMode ? faSun : faMoon}
+                className="icon"
+              />
+              {darkMode ? '' : ''} {/* Empty as per your previous code; can be updated to 'Light Mode'/'Dark Mode' */}
             </button>
           </div>
         </div>
