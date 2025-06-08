@@ -138,7 +138,8 @@ const App: React.FC = () => {
 
       <footer className="footer">
         <p>
-          <span className="copyright-symbol">©</span> 2025 Movie Explorer. All rights reserved.
+          {/* <span className="copyright-symbol">©</span> */}
+          &copy; 2025 Movie Explorer. All rights reserved.
         </p>
       </footer>
     </div>

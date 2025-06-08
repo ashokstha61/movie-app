@@ -49,27 +49,34 @@ body.dark {
   --text: black;
 }
 
-.App {
-  padding: 0; /* Removed padding to allow full-screen background */
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
-  background: var(--background); /* Theme background */
-  box-sizing: border-box; /* Prevent padding/margin issues */
-  overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
 .navbar {
   background: linear-gradient(90deg, #326291, #317c86);
   padding: 1.5rem 2rem;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  height: 108px; /* Set exact height */
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-bottom: 2px solid #38c240;
   transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Ensure padding is included in height */
+  display: flex; /* Ensure content aligns properly */
+  align-items: center; /* Vertically center content */
+}
+
+.App {
+  padding: 0;
+  padding-top: 108px; /* Match navbar height to prevent overlap */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--background);
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .navbar:hover {
@@ -81,6 +88,7 @@ body.dark {
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
+  max-height: 100px;
   margin: 0 auto;
 }
 
@@ -430,9 +438,9 @@ body.dark {
 
 .footer {
   background: linear-gradient(90deg, #326291, #317c86);
-  padding: 3rem;
+  padding: 1.5rem;
   text-align: center;
-  margin-top: auto; /* Pushes footer to bottom */
+  margin-top: 5px; /* Pushes footer to bottom */
   box-shadow: 0 -4px 6px rgba(83, 79, 79, 0.2);
   border-radius: 10px;
   flex-shrink: 0;
