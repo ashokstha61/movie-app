@@ -60,7 +60,7 @@ const Navbar: React.FC<Props> = ({
                 icon={darkMode ? faSun : faMoon}
                 className="icon"
               />
-              {darkMode ? '' : ''} {/* Empty as per your previous code; can be updated to 'Light Mode'/'Dark Mode' */}
+              {darkMode ? '' : ''} 
             </button>
           </div>
         </div>
